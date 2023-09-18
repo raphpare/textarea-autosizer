@@ -1,6 +1,6 @@
 {
     "name": "textarea-autosizer",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Textarea Autosizer automatically resizes the height of a textarea based on the content entered or pasted inside it.",
     "keywords": [
         "auto-height",

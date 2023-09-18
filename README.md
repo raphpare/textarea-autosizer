@@ -52,7 +52,7 @@ textareaAutosizer.set(refTextarea);
 ## Methods
 
 ### TextareaAutosizer.set(htmlTextAreaElement, options)
-Initializing the textarea.
+Initializing the Textarea Autosizer.
 
 #### Options
 | Attribute | Description |
