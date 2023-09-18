@@ -23,7 +23,7 @@ yarn add textarea-autosizer
 
 ### HTML
 ``` HTML
-<textarea>Text</textarea>
+<textarea></textarea>
 ```
 
 ### TypeScript
@@ -47,16 +47,16 @@ const refTextarea = document.querySelector('textarea');
 
 const textareaAutosizer = new TextareaAutosizer();
 textareaAutosizer.set(refTextarea);
-
+```
 
 ## Methods
 
 ### TextareaAutosizer.set(htmlTextAreaElement, options)
 Initializing the textarea.
 
-**options**
+#### Options
 | Attribute | Description |
-| -- | -- | -- |
+| -- | -- |
 | minHeight?: `number` | Minimum height of textarea |
 | maxHeight?: `number` | Maximum height of textarea |
 
