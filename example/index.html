@@ -7,12 +7,39 @@
     <title>Textarea Autosizer Example</title>
 
     <style>
+        :root {
+            --primary: rgb(10, 44, 235);
+        }
         * {
             box-sizing: border-box;
         }
 
+        html, body {
+            margin: 0;
+            height: 100%;
+        }
+
         body {
+            display: flex;
+            flex-direction: column;
             font-family: sans-serif;
+        }
+        
+        main {
+            flex: auto;
+            padding: 48px 24px;
+        }
+
+        h1 {
+            margin: 0 0 32px;
+        }
+
+        a {
+            color: var(--primary)
+        }
+
+        label {
+            font-weight: bold;
         }
 
         textarea {
@@ -20,12 +47,54 @@
             width: 100%;
             padding: 12px;
             font: inherit;
+            margin-top: 8px;
+            border-radius: 4px;
+            outline-color: var(--primary);
+        }
+
+        .code {
+            margin: 16px 0 0;
+            border-radius: 4px;
+            padding: 16px;
+            overflow: auto;
+        }
+
+        .code p {
+            margin: 0;
+        }
+
+        .code p + p {
+            margin-top: 4px;
+        }
+
+        .code,
+        footer {
+            background-color: #f6f6f6;
+        }
+
+        footer {
+            padding: 12px 24px;
         }
     </style>
 </head>
 <body>
-    <textarea>Lorem ipsum dolor sit amet consectetur adipisicing elit.</textarea>
+    <main>
+        <h1>Textarea Autosizer</h1>
+        <label for="textarea">Example</label>
+        <textarea id="textarea">Lorem ipsum dolor sit amet consectetur adipisicing elit.</textarea>
+        <pre class="code">import { setTextareaAutosizer } from 'textarea-autosizer';
 
+setTextareaAutosizer(
+    document.querySelector('textarea'), 
+    { 
+        minHeight: 60,
+        maxHeight: 240
+    }
+);</pre>
+    </main>
+    <footer>
+        <a href="https://github.com/raphpare/textarea-autosizer">GitHub</a>
+    </footer>
     <script type="module" src="scripts/index.js"></script>
 </body>
 </html>
