@@ -1,0 +1,37 @@
+{
+    "name": "textarea-autosizer",
+    "version": "0.0.1",
+    "description": "Textarea Autosizer automatically resizes the height of a textarea based on the content entered or pasted inside it.",
+    "keywords": [
+        "auto-height",
+        "textarea",
+        "input",
+        "resize"
+    ],
+    "homepage": "https://github.com/raphpare/textarea-autosizer.git",
+    "bug": {
+        "url": "https://github.com/raphpare/textarea-autosizer/issues"
+    },
+    "license": "ISC",
+    "author": "Raphaël Paré <raph.pare@outlook.com> (https://github.com/raphpare)",
+    "files": [
+        "lib"
+    ],
+    "main": "lib/index.js",
+    "module": "lib/index.esm.js",
+    "types": "lib/index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/raphpare/textarea-autosizer.git"
+    },
+    "scripts": {
+        "build": "rimraf lib && node esbuild.config.js && tsc",
+        "watch": "rimraf lib && node esbuild.config.js --watch",
+        "clean": "rimraf node_modules && rimraf lib"
+    },
+    "devDependencies": {
+        "rimraf": "^5.0.0",
+        "esbuild": "^0.14.2",
+        "typescript": "^4.5.2"
+    }
+}

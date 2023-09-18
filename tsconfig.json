@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "declaration": true,
+        "declarationDir": "./lib",
+        "emitDeclarationOnly": true,
+        "declarationMap": true,
+        "target": "es6",
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules"]
+}
