@@ -9,6 +9,10 @@ config = [
     {
         outfile: pkg.module,
         format: 'esm'
+    },
+    {
+        outfile: 'docs/scripts/textarea-autosizer.js',
+        format: 'esm'
     }
 ]
 
