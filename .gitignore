@@ -1,4 +1,8 @@
 .DS_Store
 .vscode
 node_modules
-lib
+lib/index.d.ts
+lib/index.d.ts.map
+lib/index.esm.js.map
+lib/index.js
+lib/index.js.map

@@ -1,5 +1,7 @@
-# Textarea Autosizer
+# Textarea Autosizer [dependency-free]
 Textarea Autosizer automatically resizes the height of a textarea based on the content entered or pasted inside it.
+
+[Live example](https://raphpare.github.io/textarea-autosizer)
 
 ## Getting Started
 1. [Install](#install)
@@ -19,7 +21,7 @@ npm i textarea-autosizer --save
 yarn add textarea-autosizer
 ```
 
-## Examples
+## [Examples](https://raphpare.github.io/textarea-autosizer)
 
 ### HTML
 ``` HTML
