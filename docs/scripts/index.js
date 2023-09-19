@@ -1,4 +1,4 @@
-import { setTextareaAutosizer } from '../../lib/index.esm.js';
+import { setTextareaAutosizer } from './textarea-autosizer.js';
 
 setTextareaAutosizer(
     document.querySelector('textarea'), 
