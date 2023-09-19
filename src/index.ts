@@ -9,7 +9,7 @@ export class TextareaAutosizer {
     #resizeListener: () => void;
 
     constructor() {
-        this.#resizeListener = this.#resizeTextarea.bind(this);
+        this.#resizeListener = this.#resize.bind(this);
         if (typeof window !== 'undefined' && window.Math === Math && typeof window.ResizeObserver !== 'undefined') {
             this.#resizeObserver = new ResizeObserver(this.#resizeListener);
         }
@@ -40,7 +40,7 @@ export class TextareaAutosizer {
             this.#refTextarea.style.maxHeight = `${options.maxHeight}px`;
         }
 
-        this.#resizeTextarea();
+        this.#resize();
     }
     
     remove(): TextareaAutosizer {
@@ -60,7 +60,7 @@ export class TextareaAutosizer {
         return this;
     }
     
-    #resizeTextarea(): void {
+    #resize(): void {
         if (!this.#refTextarea || this.#refTextarea.tagName !== 'TEXTAREA') return;
 
         this.#refTextarea.style.overflowY = 'hidden';
