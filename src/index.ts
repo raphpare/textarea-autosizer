@@ -19,7 +19,6 @@ export class TextareaAutosizer {
         this.#refTextarea = element;
 
         this.updateOptions(options);
-        this.#resizeTextarea();
         
         this.#refTextarea.addEventListener('input', this.#resizeListener);
 
@@ -40,6 +39,8 @@ export class TextareaAutosizer {
         if(options.maxHeight) {
             this.#refTextarea.style.maxHeight = `${options.maxHeight}px`;
         }
+
+        this.#resizeTextarea();
     }
     
     remove(): TextareaAutosizer {
