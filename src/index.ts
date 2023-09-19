@@ -5,10 +5,14 @@ export interface TextareaAutosizerOptions {
 
 export class TextareaAutosizer {
     #refTextarea: HTMLTextAreaElement | null = null;
+    #resizeObserver: ResizeObserver | null = null;
     #resizeListener: () => void;
 
     constructor() {
         this.#resizeListener = this.#resizeTextarea.bind(this);
+        if (typeof window !== 'undefined' && window.Math === Math && typeof window.ResizeObserver !== 'undefined') {
+            this.#resizeObserver = new ResizeObserver(this.#resizeListener);
+        }
     }
 
     set(element: HTMLTextAreaElement, options: TextareaAutosizerOptions): TextareaAutosizer {
@@ -18,7 +22,12 @@ export class TextareaAutosizer {
         this.#resizeTextarea();
         
         this.#refTextarea.addEventListener('input', this.#resizeListener);
-        window.addEventListener('resize', this.#resizeListener);
+
+        if (this.#resizeObserver) {
+            this.#resizeObserver.observe(this.#refTextarea);
+        } else {
+            window.addEventListener('resize', this.#resizeListener);
+        }
         
         return this;
     }
@@ -35,7 +44,12 @@ export class TextareaAutosizer {
     
     remove(): TextareaAutosizer {
         this.#refTextarea.removeEventListener('input', this.#resizeListener);
-        window.removeEventListener('resize', this.#resizeListener);
+
+        if (this.#resizeObserver) {
+            this.#resizeObserver.unobserve(this.#refTextarea);
+        } else {
+            window.removeEventListener('resize', this.#resizeListener);
+        }
 
         this.#refTextarea.style.removeProperty('height');
         this.#refTextarea.style.removeProperty('min-height');
