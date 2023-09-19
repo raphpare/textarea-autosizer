@@ -73,8 +73,6 @@ export class TextareaAutosizer {
             10
         ) - this.#refTextarea.clientHeight;
 
-        if (currentHeight < 0) return;
-
         const maxHeight = parseInt(
             elementComputedStyle.maxHeight,
             10
